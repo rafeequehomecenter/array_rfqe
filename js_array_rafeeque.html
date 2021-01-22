@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <button id="howmany" onclick="result()">  how many cookers you have?</button>  <br>
+    <button id="rated" onclick="result()">most rated cooker you have?</button>   <br>
+   <button  id="tvlists"onclick="result()" >Show me your tv list?</button>   <br>
+    <button id="lastrank" onclick="result()">which is your last ranked mixie?</button>   <br>
+    <!-- <button onclick="result()">result</button> -->
+    <p id="answers"></p>
+
+    <h5>details</h5>
+    <p id="details"></p>
+
+    <script>
+        // veriable assignment
+        let howmany=document.getElementById("howmany")
+        let rated=document.getElementById("rated")
+        let tvlists=document.getElementById("tvlists")
+        let lastrank=document.getElementById("lastrank")
+        cooker =["apple","pegion","hawkins","chakson"]
+        mixie=["sujatha","vidiem","vguard"]
+
+        tv=["llyod","samsung"]
+        
+        // make objects and properties
+var br="<br>"
+        var RafeequeHomeCenter= {
+            name:"rafeequehomecenter",
+            address:"parapangadi road chemmad",
+            employeesnumber:67,
+            mubile:"009876554321",
+            details: function(){
+                return this.name+br+this.address+br+this.employeesnumber+br+this.mubile
+                }
+        }
+      document.getElementById("details").innerHTML=RafeequeHomeCenter.details()
+
+        function result(){
+            numbers= cooker.length
+            rated=cooker[3]
+            tvlists=cooker
+            //veraible =array[3]
+            //  veriable= array[no. of products-1]
+            lastranked=cooker[cooker.length-1]
+
+            // document.getElementById("demo").innerHTML=tvlists
+            if(howmany){
+                document.getElementById("answers").innerHTML=numbers
+            }else if (rated) {
+                document.getElementById("answers").innerHTML=rated
+            } else if(tvlists) {
+                document.getElementById("answers").innerHTML=tvlists
+            }else{
+                document.getElementById("answers").innerHTML=lastranked
+            }
+        }
+    </script>
+</body>
+</html>
